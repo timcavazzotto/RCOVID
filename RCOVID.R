@@ -61,7 +61,7 @@ data <- data %>%
         ))))
 
 
-#### DECORA ########
+#### RCOVID ########
 
  
 
@@ -126,8 +126,8 @@ data<-data %>%
                               cumsum(reinfectec2), 0))
 
 
-#create a valid infection - primo-infection - reinfection order
-# specifying prime-infection
+#create a valid infection - primary infection - reinfection order
+# specifying primary infection
 data$reinf1<-ifelse(data$order_infec_valid==1,1,0)
 
 data<-data %>%
@@ -169,7 +169,7 @@ write.csv2(data, file = "Reinfec_validation.csv")
 
 # #levels of variable infec_primo_reinfec
 # # 0=no infection
-# # 1=prime-infection (first infection for cases with reinfections)
+# # 1=primary infection (first infection for cases with reinfections)
 # # 2=reinfection 1
 # # 3=reinfection 2
 # # 4=reinfection 3
